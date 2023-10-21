@@ -15,7 +15,7 @@ const MAX_CELL = 255;
 /**
  * 
  * @param { number } value 
- * @returns 
+ * @returns { number }
  */
 const clamp = (value) => {
   if (value > MAX_CELL) return MIN_CELL;
@@ -23,6 +23,12 @@ const clamp = (value) => {
   return value;
 }
 
+/**
+ * 
+ * @param { number } index 
+ * @param { string[] } instructions 
+ * @returns { number }
+ */
 const getNextFistIndex = (index, instructions) => {
   let fists = 1;
   for (let i = index + 1; i < instructions.length; i++) {
@@ -32,6 +38,12 @@ const getNextFistIndex = (index, instructions) => {
   }
 }
 
+/**
+ * 
+ * @param { number } index 
+ * @param { string[] } instructions 
+ * @returns { number }
+ */
 const getPrevFistIndex = (index, instructions) => {
   let fists = 1;
   for (let i = index - 1; i >= 0; i--) {
@@ -44,7 +56,7 @@ const getPrevFistIndex = (index, instructions) => {
 /**
  * 
  * @param { string } message 
- * @returns 
+ * @returns { string }
 */
 function translate(message) {
   const memory = [0];
